@@ -5,6 +5,7 @@ namespace RedArrow.Argo.Client.Session
 {
     public interface ISession : IQuerySession, IDisposable
     {
+        bool Disposed { get; }
         Task<TModel> Create<TModel>();
         Task<TModel> Create<TModel>(TModel model);
         Task<TModel> Get<TModel>(Guid id);
